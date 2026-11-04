@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genie 4 Prompt Builder — World Prompts & Turning Events for DeepMind's World Model</title>
+<meta name="description" content="Free structured prompt builder for Google DeepMind's Genie 4 world model (announced Oct 27, 2026): pick a setting, weather, camera path, a timed turning event and an audio bed, and get a complete steerable world prompt. Plus access status, examples and a 300-prompt library.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a1a1a;background:#fafafa;line-height:1.55}
+.wrap{max-width:880px;margin:0 auto;padding:24px 18px 64px}
+h1{font-size:29px;line-height:1.2;margin:8px 0}h2{margin-top:34px;font-size:21px}
+.card{background:#fff;border:1px solid #e3e3e3;border-radius:12px;padding:20px;margin:18px 0}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+select,input{width:100%;padding:9px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+textarea{width:100%;min-height:130px;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.btn{display:inline-block;background:#111;color:#fff;padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:15px}
+.small{font-size:13px;color:#555}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e7e7e7;padding:8px 6px;text-align:left}
+details{margin:10px 0}summary{font-weight:600;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is Genie 4?","acceptedAnswer":{"@type":"Answer","text":"Genie 4 is Google DeepMind's world model, announced October 27, 2026. It generates a real-time interactive world from a text description, with native audio, and lets you steer it with more text while it runs - changing weather, camera and events mid-run."}},
+{"@type":"Question","name":"How do I get access to Genie 4?","acceptedAnswer":{"@type":"Answer","text":"As of early November 2026 Genie 4 is a research preview for trusted testers. Google says it is coming to Google AI Ultra subscribers through Project Genie and to early-access partners of the Gemini API and Google AI Studio. A waitlist for Project Genie is open."}},
+{"@type":"Question","name":"What makes a good Genie 4 prompt?","acceptedAnswer":{"@type":"Answer","text":"Five ingredients: a concrete setting, weather and light, a camera path, a timed turning event (a change the world must react to), and an audio bed. Genie 4 is steered live, so a prompt that plans the change - not just the opening scene - produces the most alive worlds."}},
+{"@type":"Question","name":"What is a turning event in Genie 4?","acceptedAnswer":{"@type":"Answer","text":"A turning event is a mid-run change you introduce with text, such as rain starting at second 20 or a new character entering. The world model simulates the consequences, which is what makes the world feel reactive rather than pre-rendered."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<h1>Genie 4 Prompt Builder</h1>
+<p>Google DeepMind announced <b>Genie 4</b> on October 27, 2026: a world model you describe in text, walk through in real time, and steer with more text while it runs — weather, camera, events and native audio included. Worlds are built from five ingredients. Set them below and get a complete, ready-to-paste world prompt.</p>
+<p class="small">Access status (Nov 4, 2026): research preview for trusted testers; Project Genie for Google AI Ultra subscribers and Gemini API early access are listed as coming soon, with a public waitlist. Build your prompt library now, run it the day your access lands.</p>
+
+<div class="card">
+<h2 style="margin-top:0">Build your world prompt</h2>
+<div class="grid">
+<div><label>Setting</label><select id="setting">
+<option>a cliffside fishing village</option><option>a switchback trail above a glacial lake</option><option>a slot canyon with a shaft of light</option><option>a cathedral grove of giant redwoods</option><option>a rain-slick neon alley in a dense city</option><option>an orbital station garden ring</option><option>a floating island chain above the clouds</option><option>a kelp forest cathedral</option><option>a medieval market square on fair day</option><option>an iceberg lagoon at the glacier face</option><option>a bookshop with a sleeping cat</option><option>a terraformed canyon settlement</option></select></div>
+<div><label>Light</label><select id="light">
+<option>golden hour, long shadows</option><option>bright midday</option><option>blue-hour dusk</option><option>foggy dawn</option><option>moonlit night</option><option>sunrise alpenglow</option></select></div>
+<div><label>Weather</label><select id="weather">
+<option>steady breeze, clear sky</option><option>light drizzle starting</option><option>rolling fog banks</option><option>first snow flurries</option><option>calm after a storm</option><option>humid stillness</option></select></div>
+<div><label>Camera path</label><select id="camera">
+<option>slow forward walk through the scene</option><option>gentle aerial rise above the rooftops</option><option>side-tracking shot along the main feature</option><option>a push-in toward the most interesting doorway</option><option>slow orbit around the central landmark</option></select></div>
+<div><label>Turning event</label><select id="event">
+<option>rain begins and people pull awnings down</option><option>a new character enters and waves at the camera</option><option>festival lanterns switch on one street at a time</option><option>fog rolls in and the far background disappears</option><option>a large shadow passes over the scene from above</option><option>the tide turns and water flows the other way</option><option>lights switch on one by one across the scene</option><option>a door slowly opens, spilling warm light</option></select></div>
+<div><label>Event timing (seconds in)</label><input id="timing" type="number" value="20" min="0" max="120"></div>
+<div><label>Audio bed</label><select id="audio">
+<option>natural ambience of the place, no music</option><option>waves, gulls and a distant bell</option><option>rain on canvas and wooden surfaces</option><option>wind, insects and layered birdsong</option><option>city hum with a passing tram bell</option><option>deep quiet with one far-off sound source</option></select></div>
+<div><label>Dialogue (optional)</label><input id="dialogue" type="text" placeholder="e.g. A keeper calls out: “Mind the step!”"></div>
+</div>
+<p><button class="btn" id="build">Build prompt</button> <button class="btn" id="copy" style="background:#444">Copy</button></p>
+<textarea id="out" readonly></textarea>
+<p class="small">How to use it in Genie 4 / Project Genie: paste the first part as your opening description, then send the turning-event line as a steering message at the stated time.</p>
+</div>
+
+<h2>Prompt ingredients, cheat sheet</h2>
+<table>
+<tr><th>Ingredient</th><th>What it controls</th><th>Weak version</th><th>Strong version</th></tr>
+<tr><td>Setting</td><td>Where the world is</td><td>“a village”</td><td>“a cliffside fishing village above a harbor”</td></tr>
+<tr><td>Weather &amp; light</td><td>Mood and visibility</td><td>“nice day”</td><td>“blue-hour dusk, fog banks rolling in”</td></tr>
+<tr><td>Camera path</td><td>How you move</td><td>“look around”</td><td>“slow forward walk along the waterline”</td></tr>
+<tr><td>Turning event</td><td>The mid-run change</td><td>“something happens”</td><td>“at ~20s: rain begins, awnings come down”</td></tr>
+<tr><td>Audio bed</td><td>Native sound</td><td>“background sounds”</td><td>“waves, gulls, a harbor bell, no music”</td></tr>
+</table>
+
+<h2>The full library</h2>
+<div class="card">
+<p><b>Genie 4 World Prompt Library — $9.99</b></p>
+<p>300 ready-to-run world prompts across 12 themes (coastal, alpine, desert, jungle, cities, sci-fi, fantasy, underwater, historical, polar, sky, cozy interiors) — each with setting, weather, camera path, a timed turning event and an audio bed. Plus 50 turning-event sequences and a World Bible template for keeping recurring characters and locations consistent.</p>
+<p><a class="btn" href="https://binbinster.gumroad.com/l/genie4-prompt-library">Get the Library</a></p>
+<p class="small">One-time payment. Not affiliated with Google or DeepMind.</p>
+</div>
+
+<h2>FAQ</h2>
+<details><summary>What is Genie 4?</summary><p>DeepMind's latest world model (announced October 27, 2026): it generates a real-time, steerable world from text, with native audio and a Gemini agent checking each step. You change weather, camera and events by typing while it runs.</p></details>
+<details><summary>How do I get access?</summary><p>Research preview for trusted testers today. Google lists Project Genie (Google AI Ultra) and Gemini API early access as coming soon; a Project Genie waitlist is open. Nobody outside the tester group can run it yet — which is exactly why prompt libraries are being built now.</p></details>
+<details><summary>Why does the turning event matter so much?</summary><p>A static scene is a video. A scene that reacts — rain arriving, a character entering, the tide turning — is a world. Genie 4's steering is the feature; prompts that plan the change get visibly more alive results.</p></details>
+<details><summary>Can I use these prompts commercially?</summary><p>The library is yours to use in your own projects. Genie 4's own output terms are set by Google and may change at launch.</p></details>
+<p class="small" style="margin-top:40px">Independent tool, not affiliated with Google or DeepMind. Access status checked November 4, 2026.</p>
+</div>
+<script>
+function build(){
+ var s=function(id){return document.getElementById(id).value};
+ var t=parseInt(s('timing'))||20;
+ var p='World: '+s('setting')+', '+s('light')+'. Weather: '+s('weather')+'. Camera: '+s('camera')+'. Audio: '+s('audio')+'.';
+ if(s('dialogue').trim()) p+=' Dialogue: '+s('dialogue').trim();
+ p+='\n\nSteering message (send at ~'+t+'s): '+s('event')+'.';
+ document.getElementById('out').value=p;
+}
+document.getElementById('build').addEventListener('click',build);
+document.getElementById('copy').addEventListener('click',function(){var o=document.getElementById('out');o.select();document.execCommand('copy')});
+build();
+</script>
+</body>
+</html>
