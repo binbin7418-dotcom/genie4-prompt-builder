@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genie 4 Use Cases — Playable Worlds for Games, Training, Film & Education</title>
+<meta name="description" content="What Genie 4 worlds are actually for: game prototyping, simulation training, film previz, classroom worlds and virtual tourism — each with a complete example world prompt built from the five ingredients.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a1a1a;background:#fafafa;line-height:1.55;font-variant-numeric:tabular-nums}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:29px;line-height:1.2;margin:8px 0}h2{margin-top:36px;font-size:21px}
+.card{background:#fff;border:1px solid #e3e3e3;border-radius:12px;padding:20px;margin:16px 0}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+select,input{width:100%;padding:8px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+textarea{width:100%;min-height:128px;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.btn{display:inline-block;background:#111;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:15px}
+.small{font-size:13px;color:#555}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e7e7e7;padding:8px 4px;text-align:left}
+details{margin:12px 0}summary{font-weight:600;cursor:pointer}
+
+b,strong{font-weight:600}
+.band{background:#111;color:#f2f2f2;border-radius:12px;padding:20px;margin:16px 0}
+.band .small{color:#bbb}
+.chip{display:inline-block;border:1px solid #bbb;border-radius:999px;padding:4px 12px;margin:0 8px 8px 0;font-size:13px;font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Genie 4 be used for game development?","acceptedAnswer":{"@type":"Answer","text":"For prototyping and level mood-testing, yes: a designer can walk a described environment in minutes instead of grey-boxing it for days. It is a world model, not a game engine - there is no exportable geometry or game logic yet, so treat it as the fastest sketchbook a level designer has ever had."}},{"@type":"Question","name":"Is Genie 4 useful for training simulations?","acceptedAnswer":{"@type":"Answer","text":"Yes, because of steering. An instructor can change conditions mid-run - weather closing in, a crowd gathering, equipment appearing - and the trainee reacts to a world that reacts back. Scenarios are written as prompts, so a new drill costs a paragraph, not a development sprint."}},{"@type":"Question","name":"Can filmmakers use Genie 4 for previsualization?","acceptedAnswer":{"@type":"Answer","text":"Yes. A director can scout a location that does not exist yet, test camera paths through it, and rehearse the moment the scene changes - the turning event - before any set is built. The audio bed in the prompt doubles as a first sound-design sketch."}}]}
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SBGDMZBG5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6SBGDMZBG5');
+</script>
+</head>
+<body>
+<div class="wrap">
+<h1>Genie 4 Use Cases: What Playable Worlds Are For</h1>
+<p>A world model is only interesting once someone points it at a real job. Below are five jobs Genie 4 fits, each with a complete example prompt built from the five ingredients (setting, weather &amp; light, camera path, turning event, audio bed). Build your own in the <a href="index.html">free prompt builder</a>, or see the <a href="how-to.html">step-by-step guide</a> first.</p>
+
+<div class="card"><p style="margin:0 0 12px"><b>Every example below is built from the same five ingredients:</b></p><p style="margin:0"><span class="chip">1 · Setting</span><span class="chip">2 · Weather &amp; light</span><span class="chip">3 · Camera path</span><span class="chip">4 · Turning event</span><span class="chip">5 · Audio bed</span></p></div>
+<h2>1. Game prototyping and level mood tests</h2>
+<div class="card">
+<p><b>The job.</b> A level designer wants to know whether a harbor town feels right at dusk before anyone grey-boxes it. Instead of a week of blockout, she writes the world, walks it, and steers the weather live to test both moods in one session.</p>
+<p><b>Example prompt.</b> “World: a cliffside fishing village above a harbor, blue-hour dusk. Weather: rolling fog banks. Camera: slow forward walk along the waterline. Audio: waves, gulls and a distant bell, no music.” Steering message at ~20s: “fog rolls in and the far background disappears.”</p>
+<p><b>Why Genie 4.</b> The turning point is the test: if the world stays readable and atmospheric when the fog arrives, the level concept survives contact with reality — in an afternoon, not a milestone.</p>
+</div>
+
+<h2>2. Training simulations that fight back</h2>
+<div class="card">
+<p><b>The job.</b> A safety instructor runs evacuation drills. Static simulators repeat; trainees memorize them. With steering, the instructor changes the drill while it runs — a blocked exit, rising water, a crowd forming — and every run is different.</p>
+<p><b>Example prompt.</b> “World: a medieval market square on fair day, bright midday. Weather: calm after a storm. Camera: slow forward walk through the scene. Audio: natural ambience of the place, no music.” Steering message at ~30s: “festival lanterns switch on one street at a time” — or, for the drill version, smoke, alarms and a shifting crowd.</p>
+<p><b>Why Genie 4.</b> New scenarios cost a paragraph. The instructor's library of drills grows as fast as she can write turning events.</p>
+</div>
+
+<h2>3. Film previsualization</h2>
+<div class="card">
+<p><b>The job.</b> A director needs to scout a location that doesn't exist — an orbital station garden — and rehearse the exact beat where the scene turns, before the production spends anything on sets or renders.</p>
+<p><b>Example prompt.</b> “World: an orbital station garden ring, sunrise alpenglow through the canopy glass. Weather: humid stillness. Camera: gentle aerial rise above the planting beds. Audio: deep quiet with one far-off sound source.” Steering message at ~25s: “a large shadow passes over the scene from above” — the eclipse beat, rehearsed.</p>
+<p><b>Why Genie 4.</b> Camera path is a prompt ingredient, so shot design and location design happen in the same pass, with the audio bed as a first sound sketch.</p>
+</div>
+
+<h2>4. Classroom worlds for history and geography</h2>
+<div class="card">
+<p><b>The job.</b> A teacher wants students inside the place the textbook describes — not a photo of it. The class walks a living scene, and the teacher steers events while narrating: the tide turning, the market waking up.</p>
+<p><b>Example prompt.</b> “World: an iceberg lagoon at the glacier face, bright midday. Weather: steady breeze, clear sky. Camera: side-tracking shot along the glacier face. Audio: wind, cracking ice and layered birdsong.” Steering message at ~20s: “the tide turns and water flows the other way.”</p>
+<p><b>Why Genie 4.</b> The lesson is the change, not the postcard: students watch a process happen instead of reading that it happens.</p>
+</div>
+
+<h2>5. Virtual tourism and real-estate walkthroughs</h2>
+<div class="card">
+<p><b>The job.</b> A travel creator previews destinations and story angles before booking flights; an agent walks buyers through a renovation concept that is still a floor plan. Both need places that feel inhabited, not rendered.</p>
+<p><b>Example prompt.</b> “World: a bookshop with a sleeping cat, golden hour, long shadows. Weather: light drizzle starting outside the windows. Camera: a push-in toward the most interesting doorway. Audio: rain on canvas and wooden surfaces.” Steering message at ~15s: “a door slowly opens, spilling warm light.”</p>
+<p><b>Why Genie 4.</b> Weather and light are ingredients, so the same place can be previewed at dawn, dusk and in the rain — the three versions a buyer or viewer actually decides between.</p>
+</div>
+
+<h2>The full library</h2>
+<div class="card">
+<p><b>Genie 4 World Prompt Library — $9.99</b></p>
+<p>300 ready-to-run world prompts across 12 themes (coastal, alpine, desert, jungle, cities, sci-fi, fantasy, underwater, historical, polar, sky, cozy interiors) — each with setting, weather, camera path, a timed turning event and an audio bed. Plus 50 turning-event sequences and a World Bible template for keeping recurring characters and locations consistent.</p>
+<p><a class="btn" href="https://binbinster.gumroad.com/l/genie4-prompt-library">Get the Library</a></p>
+<p class="small">One-time payment. Not affiliated with Google or DeepMind. New to this? Start with the <a href="index.html">free builder</a>.</p>
+</div>
+
+<h2>FAQ</h2>
+<details><summary>Can Genie 4 be used for game development?</summary><p>For prototyping and level mood-testing, yes: a designer can walk a described environment in minutes instead of grey-boxing it for days. It is a world model, not a game engine — there is no exportable geometry or game logic yet, so treat it as the fastest sketchbook a level designer has ever had.</p></details>
+<details><summary>Is Genie 4 useful for training simulations?</summary><p>Yes, because of steering. An instructor can change conditions mid-run — weather closing in, a crowd gathering, equipment appearing — and the trainee reacts to a world that reacts back. Scenarios are written as prompts, so a new drill costs a paragraph, not a development sprint.</p></details>
+<details><summary>Can filmmakers use Genie 4 for previsualization?</summary><p>Yes. A director can scout a location that does not exist yet, test camera paths through it, and rehearse the moment the scene changes — the turning event — before any set is built. The audio bed in the prompt doubles as a first sound-design sketch.</p></details>
+
+<p class="small" style="margin-top:40px">Independent tool, not affiliated with Google or DeepMind. Access status checked November 4, 2026.</p>
+<nav style="margin-top:32px;text-align:center"><a class="btn" href="index.html">Prompt Builder</a> <a class="btn" href="use-cases.html">Use Cases</a> <a class="btn" href="how-to.html">How To</a></nav>
+</div>
+</body>
+</html>
