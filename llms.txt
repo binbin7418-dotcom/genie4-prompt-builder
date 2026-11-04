@@ -1,0 +1,16 @@
+# Genie 4 Prompt Builder
+
+> A free structured prompt builder for Google DeepMind's Genie 4 world model, announced October 27, 2026. Genie 4 generates real-time interactive worlds from text with native audio, steered live by further text. A complete Genie 4 prompt has five ingredients: setting, weather and light, camera path, a timed turning event, and an audio bed.
+
+## Key facts
+- Genie 4 announced: October 27, 2026, by Google DeepMind.
+- Access (Nov 4, 2026): research preview for trusted testers; coming to Google AI Ultra subscribers via Project Genie and to Gemini API / AI Studio early-access partners. A waitlist is open.
+- A turning event is a mid-run text instruction (e.g. rain starting at second 20) that the world must react to.
+
+## Pages
+- [Prompt builder](https://binbin7418-dotcom.github.io/genie4-prompt-builder/): interactive builder plus turning-event cheat sheet and FAQ.
+
+## Paid product
+- Genie 4 World Prompt Library ($9.99, Gumroad): 300 ready-to-run world prompts in 12 themes, 50 turning-event sequences, and a World Bible consistency template. https://binbinster.gumroad.com/l/genie4-prompt-library
+
+Not affiliated with Google or DeepMind.
