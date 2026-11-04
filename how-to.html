@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Write a Genie 4 Prompt — The Five Ingredients, Step by Step</title>
+<meta name="description" content="A step-by-step guide to writing a Genie 4 world prompt: choose a concrete setting, set weather and light, plan a camera path, schedule a timed turning event and finish with an audio bed — with a worked example.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a1a1a;background:#fafafa;line-height:1.55;font-variant-numeric:tabular-nums}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:29px;line-height:1.2;margin:8px 0}h2{margin-top:36px;font-size:21px}
+.card{background:#fff;border:1px solid #e3e3e3;border-radius:12px;padding:20px;margin:16px 0}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+select,input{width:100%;padding:8px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+textarea{width:100%;min-height:128px;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+.btn{display:inline-block;background:#111;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:15px}
+.small{font-size:13px;color:#555}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e7e7e7;padding:8px 4px;text-align:left}
+details{margin:12px 0}summary{font-weight:600;cursor:pointer}
+
+b,strong{font-weight:600}
+.band{background:#111;color:#f2f2f2;border-radius:12px;padding:20px;margin:16px 0}
+.band .small{color:#bbb}
+.chip{display:inline-block;border:1px solid #bbb;border-radius:999px;padding:4px 12px;margin:0 8px 8px 0;font-size:13px;font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do my Genie 4 worlds feel static?","acceptedAnswer":{"@type":"Answer","text":"Almost always a missing or vague turning event. A world seed alone produces a scene; the scheduled change - rain arriving, a character entering, lights switching on - is what makes it feel alive. Give the turning event a specific time and a visible consequence."}},{"@type":"Question","name":"How many turning events should a Genie 4 session have?","acceptedAnswer":{"@type":"Answer","text":"One planned event per 20-30 seconds of run is a good rhythm. More than that and the world never settles between changes; fewer and it drifts back to feeling like a video. You can always improvise extra steering live."}},{"@type":"Question","name":"What should I do while I wait for Genie 4 access?","acceptedAnswer":{"@type":"Answer","text":"Build the library now. Prompts are plain text and cost nothing to prepare: write your world seeds and turning-event sequences, keep recurring places consistent with a World Bible, and you can run the whole collection the day access lands."}}]}
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SBGDMZBG5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6SBGDMZBG5');
+</script>
+</head>
+<body>
+<div class="wrap">
+<h1>How to Write a Genie 4 Prompt in Five Steps</h1>
+<p>A Genie 4 prompt is two texts, not one: the <b>world seed</b> you paste at the start, and the <b>steering message</b> you send mid-run. The five steps below build both. The <a href="index.html">free builder</a> assembles them from dropdowns; this page explains what each choice is doing. For finished examples by job, see <a href="use-cases.html">use cases</a>.</p>
+
+<h2>Step 1 — Choose a concrete setting</h2>
+<div class="card">
+<p>Name a place with a shape to it: not “a village” but “a cliffside fishing village above a harbor”. Concrete settings give the model landmarks to keep consistent as you move. Add one signature detail — a lighthouse, a sleeping cat, a broken pier — that the world can be recognized by in every frame.</p>
+<p class="small">Weak: “a forest”. Strong: “a cathedral grove of giant redwoods with a fallen trunk bridge over a creek”.</p>
+</div>
+
+<h2>Step 2 — Set weather and light</h2>
+<div class="card">
+<p>Weather and light decide mood and visibility more than any other ingredient. Pick a specific time (“blue-hour dusk”, “foggy dawn”) and one weather behavior (“rolling fog banks”, “first snow flurries”). If the weather will change during the run, don't put the change here — that's the turning event's job, in step 4.</p>
+<p class="small">Weak: “nice day”. Strong: “golden hour, long shadows, light drizzle starting”.</p>
+</div>
+
+<h2>Step 3 — Plan the camera path</h2>
+<div class="card">
+<p>Decide how the viewer moves: a slow forward walk, a gentle aerial rise, a side-tracking shot, an orbit around the central landmark. A planned path beats “look around” because the model composes frames along the route — doorways, waterlines and viewpoints land where the path can see them.</p>
+<p class="small">Weak: “explore the area”. Strong: “slow forward walk along the waterline, ending at the harbor steps”.</p>
+</div>
+
+<h2>Step 4 — Schedule the turning event</h2>
+<div class="card">
+<p>This is the step most prompts skip, and the one that matters most. Choose one change the world must react to — rain beginning, a character entering, the tide turning, lights switching on one street at a time — and give it a time: “at ~20 seconds”. Write it as its own line; in Genie 4 / Project Genie you send it as a steering message when the moment arrives, and the world simulates the consequences.</p>
+<p class="small">Weak: “something happens”. Strong: “at ~20s: rain begins and people pull awnings down”.</p>
+</div>
+
+<h2>Step 5 — Finish with the audio bed</h2>
+<div class="card">
+<p>Genie 4 generates native audio, so the seed should say what the world sounds like: ambience of the place, two or three signature sounds, and whether there is music. “Waves, gulls and a distant bell, no music” beats “background sounds” every time. Dialogue, if any, goes in as a short quoted line with a named speaker.</p>
+<p class="small">Weak: “ambient audio”. Strong: “rain on canvas and wooden surfaces, a keeper calls out once: ‘Mind the step!’”</p>
+</div>
+
+<h2>The assembled result</h2>
+<div class="band">
+<p>Put together, the five steps produce a prompt like this one:</p>
+<p class="small" style="white-space:pre-wrap;margin:0">World: a cliffside fishing village above a harbor, blue-hour dusk. Weather: rolling fog banks. Camera: slow forward walk along the waterline. Audio: waves, gulls and a distant bell, no music.
+
+Steering message (send at ~20s): fog rolls in and the far background disappears.</p>
+<p>Two to four sentences of seed, one line of steering — that is the whole format. Paste the first part into Genie 4 as the opening description, send the second part at the stated time.</p>
+</div>
+
+<h2>The full library</h2>
+<div class="card">
+<p><b>Genie 4 World Prompt Library — $9.99</b></p>
+<p>300 ready-to-run world prompts across 12 themes — each with setting, weather, camera path, a timed turning event and an audio bed. Plus 50 turning-event sequences and a World Bible template for keeping recurring characters and locations consistent.</p>
+<p><a class="btn" href="https://binbinster.gumroad.com/l/genie4-prompt-library">Get the Library</a></p>
+<p class="small">One-time payment. Not affiliated with Google or DeepMind.</p>
+</div>
+
+<h2>FAQ</h2>
+<details><summary>Why do my Genie 4 worlds feel static?</summary><p>Almost always a missing or vague turning event. A world seed alone produces a scene; the scheduled change — rain arriving, a character entering, lights switching on — is what makes it feel alive. Give the turning event a specific time and a visible consequence.</p></details>
+<details><summary>How many turning events should a Genie 4 session have?</summary><p>One planned event per 20-30 seconds of run is a good rhythm. More than that and the world never settles between changes; fewer and it drifts back to feeling like a video. You can always improvise extra steering live.</p></details>
+<details><summary>What should I do while I wait for Genie 4 access?</summary><p>Build the library now. Prompts are plain text and cost nothing to prepare: write your world seeds and turning-event sequences, keep recurring places consistent with a World Bible, and you can run the whole collection the day access lands.</p></details>
+
+<p class="small" style="margin-top:40px">Independent tool, not affiliated with Google or DeepMind. Access status checked November 4, 2026.</p>
+<nav style="margin-top:32px;text-align:center"><a class="btn" href="index.html">Prompt Builder</a> <a class="btn" href="use-cases.html">Use Cases</a> <a class="btn" href="how-to.html">How To</a></nav>
+</div>
+</body>
+</html>
