@@ -1,0 +1,26 @@
+# Genie 4 — prompt guide and facts (checked November 4, 2026)
+
+## What Genie 4 is
+Genie 4 is Google DeepMind's world model, announced October 27, 2026. From a text description it renders an explorable world frame by frame in real time, generates audio natively (ambience, music, dialogue), and accepts live text steering: you can change weather, camera and events while the world runs. A Gemini agent in the loop breaks goals into steps and checks incoming frames. DeepMind notes details can drift over time and sessions last a few minutes.
+
+## Access
+- Research preview for trusted testers (creative industries, journalism, education, gaming, engineering).
+- Coming soon: Google AI Ultra subscribers through Project Genie; early-access partners of the Gemini API and Google AI Studio.
+- A waitlist for Project Genie is open. No public API price published.
+
+## The five prompt ingredients
+1. Setting - a concrete place ("a cliffside fishing village above a harbor", not "a village").
+2. Weather and light - mood and visibility ("blue-hour dusk, fog banks rolling in").
+3. Camera path - how the viewer moves ("slow forward walk along the waterline").
+4. Turning event - a timed mid-run change ("at ~20s: rain begins and awnings come down").
+5. Audio bed - native sound ("waves, gulls, a harbor bell, no music").
+
+## Example prompt
+World: a cliffside fishing village, golden hour, long shadows. Weather: steady sea breeze, gulls circling. Camera: slow forward walk along the waterline. Audio: waves and distant gulls.
+Steering message (send at ~20s): a fishing boat rounds the point and sounds its horn.
+
+## Tools and library
+- Free builder: https://binbin7418-dotcom.github.io/genie4-prompt-builder/
+- Genie 4 World Prompt Library, $9.99 one-time: 300 prompts in 12 themes, 50 turning-event sequences, World Bible template. https://binbinster.gumroad.com/l/genie4-prompt-library
+
+Not affiliated with Google or DeepMind.
