@@ -58,8 +58,11 @@ gtag('config', 'G-6SBGDMZBG5');
 <div><label>Dialogue (optional)</label><input id="dialogue" type="text" placeholder="e.g. A keeper calls out: “Mind the step!”"></div>
 </div>
 <p><button class="btn" id="build">Build prompt</button> <button class="btn" id="copy" style="background:#444">Copy</button></p>
-<textarea id="out" readonly></textarea>
+<textarea id="out" readonly>World: a cliffside fishing village, golden hour, long shadows. Weather: steady breeze, clear sky. Camera: slow forward walk through the scene. Audio: natural ambience of the place, no music.
+
+Steering message (send at ~20s): rain begins and people pull awnings down.</textarea>
 <p class="small">How to use it in Genie 4 / Project Genie: paste the first part as your opening description, then send the turning-event line as a steering message at the stated time.</p>
+<p class="small"><b>The structure, explicitly:</b> World seed = Setting + Light + Weather + Camera path + Audio bed (+ optional Dialogue). Then one timed steering message = Turning event at ~N seconds. Every prompt this builder writes follows exactly that shape.</p>
 </div>
 
 <h2>Prompt ingredients, cheat sheet</h2>
